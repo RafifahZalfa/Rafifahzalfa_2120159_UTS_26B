@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Penjumlahan Sederhana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            border: 1px solid #e890f4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(10, 10, 10, 0.1);
+        }
+        input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #e890f4;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #e890f4;
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e890f4;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kalkulator Penjumlahan</h1>
+        <input type="number" id="number1" placeholder="Masukkan bilangan pertama" required>
+        <input type="number" id="number2" placeholder="Masukkan bilangan kedua" required>
+        <button onclick="calculateSum()">Hitung Jumlah</button>
+        <div class="result">
+            <p>Hasil: <span id="result">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        function calculateSum() {
+            var num1 = document.getElementById('number1').value;
+            var num2 = document.getElementById('number2').value;
+            var sum = parseInt(num1) + parseInt(num2);
+            if (isNaN(sum)) {
+                document.getElementById('result').textContent = "Input tidak valid";
+            } else {
+                document.getElementById('result').textContent = sum;
+            }
+        }
+    </script>
+</body>
+</html>
+
